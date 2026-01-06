@@ -1,0 +1,88 @@
+You are an expert React developer. Build a complete, production-ready, client-side-only **Restaurant & Food Delivery Management Dashboard** with a full landing page that includes a prominent **Hero Section containing a Login Form**. NO server-side code.
+
+### Tech Stack & Constraints (Strict)
+- Vite + React (JSX and pure JavaScript only — NO TypeScript)
+- Routing: wouter (preferred) or react-router-dom v6
+- Layout: Use Outlet for dashboard pages
+- Styling: Tailwind CSS only
+- Charts: Recharts — every dashboard page MUST have 2–5 meaningful charts with realistic mock data
+- Axios: One instance with global mock mode toggle (default: true → rich mock data)
+- Service Worker: Register and simulate real-time push notifications (e.g., "New Order #1234")
+- Custom modals: Beautiful Alert & Confirm dialogs
+- Multi-theme: Light, Dark, and Premium Gradient Theme (warm food tones: orange-red-teal)
+- Design: Vibrant, appetizing, modern food-tech aesthetic — glassmorphism, glossy accents, premium feel
+- Responsive: Desktop, tablet, mobile
+
+### Pages You MUST Fully Create
+
+1. **Landing Page with Hero + Login Form** (`/`)
+   - Sticky glossy navbar (transparent → solid/white on scroll)
+   - Large hero section (full viewport height):
+     - Bold headline: "Run Your Restaurant Smarter"
+     - Subheadline: "Real-time orders, menu, delivery, sales & insights — all in one dashboard."
+     - Right side (or below on mobile): **Fully styled Login Form** (email/password fields, "Login" button, "Forgot password?" link, mock success → redirect to dashboard)
+     - Hero background: subtle gradient + food/dashboard illustration (use placeholder image)
+     - No separate login page — login is embedded in hero
+
+2. **Dashboard Layout** (protected route after login)
+   - Collapsible sidebar with these menu items:
+     - Overview
+     - Orders
+     - Menu Management
+     - Sales & Revenue
+     - Customer Insights
+     - Delivery & Riders
+     - Staff & Operations
+     - Promotions
+     - Settings
+   - Header: Logo, theme switcher, notification bell (badge), user avatar
+
+3. **Dashboard Subpages** — Implement ALL with rich mock data & charts:
+
+   - Overview.jsx → KPI cards + hourly orders, top items, revenue trend charts
+   - Orders.jsx → Live order list + status pie, peak hours bar
+   - MenuManagement.jsx → Item grid + best-sellers bar, category pie
+   - SalesRevenue.jsx → Revenue line, payment methods doughnut
+   - CustomerInsights.jsx → Retention funnel, rating trends
+   - DeliveryRiders.jsx → Rider performance, delivery time gauges
+   - StaffOperations.jsx → Workload bars, prep time trends
+   - Promotions.jsx → Promo impact line, redemption pie
+   - Settings.jsx → Theme switcher, API toggle, profile
+
+### Mock Data & Features
+- Realistic mock data (peaks at lunch/dinner, popular items, delays)
+- Mock authentication: Login form sets auth context → redirects to dashboard
+- Simulated live updates & push notifications
+- Professional folder structure, heavily commented code
+
+### Folder Structure
+src/
+├── assets/                # food images, icons
+├── components/            # Sidebar, Header, LoginForm, KPICard, CustomModal, etc.
+├── contexts/              # AuthContext, ThemeContext, ApiToggle
+├── pages/
+│   ├── LandingWithLogin.jsx   # Hero + embedded login form
+│   └── dashboard/
+│       ├── Overview.jsx
+│       ├── Orders.jsx
+│       ├── MenuManagement.jsx
+│       ├── SalesRevenue.jsx
+│       ├── CustomerInsights.jsx
+│       ├── DeliveryRiders.jsx
+│       ├── StaffOperations.jsx
+│       ├── Promotions.jsx
+│       └── Settings.jsx
+├── routes/                # AppRoutes with Outlet
+├── services/              # axiosInstance.js (mock)
+├── mocks/                 # mock data files
+├── utils/
+├── App.jsx
+└── main.jsx
+text### Final Rules
+- Hero + Login Form must be visually stunning and integrated seamlessly
+- After mock login → smooth redirect to dashboard
+- Code clean, commented, consistent styling
+- Generate ALL files with full working code
+- Output each file in separate code blocks with path
+
+Start building now — complete every page and feature.

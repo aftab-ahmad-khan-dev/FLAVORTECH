@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Default Light Theme - Clean & Crisp */
+  --background: 0 0% 98%;
+  --foreground: 222 47% 11%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  
+  --primary: 14 89% 60%; /* Vibrant Orange #FF6B35 */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 194 100% 20%; /* Deep Teal #004E64 */
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  
+  --accent: 356 70% 50%; /* Rich Red #D62828 */
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 14 89% 60%;
+  
+  --radius: 1rem;
+}
+
+/* Dark Theme - Elegant & High Contrast */
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 14 89% 60%;
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 194 90% 30%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 356 70% 60%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 14 89% 60%;
+}
+
+/* Premium Gradient Theme - Glossy & Futuristic */
+.theme-gradient {
+  --background: 240 10% 4%;
+  --foreground: 0 0% 100%;
+  
+  --card: 240 10% 8%; /* Will be overridden by glassmorphism usually */
+  --card-foreground: 0 0% 100%;
+  
+  --primary: 14 89% 60%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 170 100% 30%; /* Bright Teal */
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 240 10% 12%;
+  --muted-foreground: 240 10% 70%;
+  
+  --border: 240 10% 15%;
+  --input: 240 10% 15%;
+  --ring: 14 89% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* Glassmorphism Utilities */
+  .glass {
+    @apply bg-white/70 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border border-gray-200/50 dark:border-white/5 shadow-lg rounded-2xl transition-all duration-300 hover:shadow-xl hover:border-primary/30;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 dark:bg-black/20 backdrop-blur-sm border-gray-200 dark:border-white/10 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-400 to-accent;
+  }
+  
+  .btn-primary-gradient {
+    @apply bg-gradient-to-r from-primary to-orange-500 hover:from-primary/90 hover:to-orange-500/90 text-white shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
+  }
+}
